@@ -27,6 +27,17 @@ function getInfo(e) {
 
 function renderCity() {
     fetch(builder.finish()).then(data => data.json()).then(info => {
+        `
+        <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">${'City: ' + info.name}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">${'Temp: ' + info.main.temp}</h6>
+    <p class="card-text">${'feels like ' + info.main.feels_like}</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+        `;
         console.log('City: ' + info.name);
         console.log('Temp: ' + info.main.temp);
         console.log('feels like ' + info.main.feels_like);
